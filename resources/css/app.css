@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Scan Laravel */
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* Base */
+@layer base {
+    body {
+        @apply font-sans text-gray-800;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+    }
+}
+
+/* Components (AMAN untuk Tailwind v4) */
+@layer components {
+
+    .container-main {
+        @apply min-h-screen flex items-center justify-center relative overflow-hidden;
+    }
+
+    .card-modern {
+        @apply relative bg-white/70 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl p-10 transition duration-500;
+    }
+
+    .card-modern:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+
+    .title {
+        @apply text-4xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent;
+    }
+
+    .subtitle {
+        @apply text-gray-600 leading-relaxed text-lg;
+    }
+
+    .btn-primary {
+        @apply px-6 py-3 rounded-xl text-white font-medium shadow-lg transition duration-300;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+        @apply px-6 py-3 rounded-xl border border-gray-300 bg-white/60 backdrop-blur transition;
+    }
+
+    .btn-secondary:hover {
+        @apply bg-white;
+    }
+}
