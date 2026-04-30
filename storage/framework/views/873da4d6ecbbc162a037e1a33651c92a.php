@@ -11,33 +11,18 @@
      <?php $__env->slot('title', null, []); ?> 
         Welcome
      <?php $__env->endSlot(); ?>
-
-    <div class="container-main px-4">
-
-        <!-- Background glow -->
-        <div class="absolute w-[500px] h-[500px] bg-indigo-500 opacity-30 blur-3xl rounded-full -top-24 -left-24"></div>
-        <div class="absolute w-[400px] h-[400px] bg-cyan-400 opacity-30 blur-3xl rounded-full -bottom-24 -right-24"></div>
-
-        <div class="max-w-2xl w-full">
-            <div class="card-modern text-center">
-
-                <h1 class="title">
-                    Welcome to Chirper 🚀
-                </h1>
-
-                <p class="subtitle mt-4">
-                    This is your brand new Laravel application. Time to make it sing (or chirp)!
-                </p>
-
-                <div class="mt-8 flex justify-center gap-4">
-                    <button class="btn-primary">
-                        Get Started
-                    </button>
+    <div class="max-w-2xl mx-auto">
+        <?php $__currentLoopData = $chirps; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $chirp): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="card bg-base-100 shadow mt-8">
+                <div class="card-body">
+                    <div>
+                        <div class="font-semibold"><?php echo e($chirp['author']); ?></div>
+                        <div class="mt-1"><?php echo e($chirp['message']); ?></div>
+                        <div class="text-sm text-gray-500 mt-2"><?php echo e($chirp['time']); ?></div>
+                    </div>
                 </div>
-
             </div>
-        </div>
-
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
