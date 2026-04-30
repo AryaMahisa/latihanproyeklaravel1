@@ -17,7 +17,7 @@
                 </h1>
 
                 <p class="subtitle mt-4">
-                    tes 123
+                    This is your brand new Laravel application. Time to make it sing (or chirp)!
                 </p>
 
                 <div class="mt-8 flex justify-center gap-4">
